@@ -90,4 +90,18 @@ basic.forever(function () {
 })
 basic.forever(function () {
     BoardState()
+    if (LEDTeam.indexOf(0) == -1) {
+        SelectActive = 0
+        basic.clearScreen()
+        basic.showString("GAME OVER")
+        Reset()
+    } else {
+        if (LEDTeam[ActiveLED - 1] == 1 || LEDTeam[ActiveLED - 1] == 2) {
+            if (ActiveLED <= 8) {
+                ActiveLED += 1
+            } else {
+                ActiveLED = 1
+            }
+        }
+    }
 })
